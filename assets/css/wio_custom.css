@@ -1,9 +1,6 @@
 #whois .container {
-    max-width: 1200px;
-    width: 100%;
     padding-left: 40px;
     padding-right: 40px;
-    text-align: left;
 }
 
 #whois h1, #whois p {
@@ -13,4 +10,8 @@
 #whois h1 {
     font-size: 60px;
     margin-top: 0;
+}
+
+#whois {
+    background-image: url('https://via.placeholder.com/1200x800');
 }
