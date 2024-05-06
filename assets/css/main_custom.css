@@ -4,9 +4,43 @@
     box-sizing: border-box;
 }
 
+:root {
+    --neon-pink: #FF007F;
+    --vibrant-purple: #B452FF;
+    --neon-green: #32CD32;
+    --neon-blue: #00BFFF;
+    --vibrant-yellow: #FFD700;
+    --vibrant-red: #FF6347;
+    --white: #FFFFFF;
+    --black: #000000;
+}
+
+body, h1, h2, h3, p {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
 html, body {
     height: 100%;
     overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+@keyframes gradientScroll {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.fluid-background {
+    background: linear-gradient(320deg, var(--neon-pink), var(--neon-green), var(--vibrant-purple), var(--neon-blue));
+    background-size: 800% 800%;
+    animation: gradientScroll 180s ease infinite;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-position: 1% 99%;
 }
 
 .container {
@@ -15,6 +49,11 @@ html, body {
     padding: 20px;
     position: relative;
     z-index: 2;
+    border: solid 1px grey;
+    border-radius: 1rem 5rem 0 0;
+    background-color: var(--white);
+    box-shadow: var(--black) 0.5rem 0.5rem;
+    transition: transform 0.5s ease-out;
 }
 
 .parallax {
@@ -24,16 +63,11 @@ html, body {
     overflow: hidden;
 }
 
-
 .section-content {
     padding: 100px 20px;
 }
 
-body, h1, h2, h3, p {
-    font-family: 'Montserrat', sans-serif;
-}
-
-.h1-style {
+.h1-style, h1 {
     font-size: 60px;
     font-weight: 900;
     margin-top: 0;
@@ -46,4 +80,42 @@ h2, h3 {
 p {
     font-size: 18px;
     font-weight: 400;
+}
+
+#whois h1, #whois p {
+    text-align: left;
+    color: var(--neon-pink);
+}
+
+#social h1, #social p {
+    text-align: left;
+    color: var(--vibrant-purple);
+}
+
+#blog h1, #blog p {
+    text-align: right;
+    color: var(--vibrant-red);
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .h1-style, h1 {
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .section-content {
+        padding: 50px 10px;
+    }
+
+    .parallax {
+        background-attachment: scroll;
+    }
 }

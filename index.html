@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="fluid-background">
     <!-- Nav section -->
     <div class="nav-container">
         <nav id="main-nav">
@@ -27,7 +27,8 @@
 
     <!-- Parallax Section for "Who is Olivia" -->
     <div class="parallax" id="whois">
-        <div class="container section-content">
+        <div class="container section-content" data-start-direction="translateX(-100%)"
+            data-out-direction="translateX(-100%)">
             <h1 class="h1-style">Who is Olivia?</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus scelerisque.</p>
         </div>
@@ -35,7 +36,8 @@
 
     <!-- Parallax Section for "Blog" -->
     <div class="parallax" id="blog">
-        <div class="container section-content">
+        <div class="container section-content" data-start-direction="translateX(100%)"
+            data-out-direction="translateX(100%)">
             <h1 class="h1-style">Blog Highlights</h1>
             <p>Explore insights and stories. Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
         </div>
@@ -43,12 +45,15 @@
 
     <!-- Parallax Section for "Social" -->
     <div class="parallax" id="social">
-        <div class="container section-content">
+        <div class="container section-content" data-start-direction="translateX(-100%)"
+            data-out-direction="translateX(-100%)">
             <h1 class="h1-style">Connect on Social</h1>
             <p>Follow Olivia on social media platforms. Nemo enim ipsam voluptatem quia voluptas.</p>
         </div>
     </div>
-    <script src="assets/js/main_custom.js"></script>
+
+
+    <script src="assets/js/scroll_custom.js"></script>
 </body>
 
 </html>
