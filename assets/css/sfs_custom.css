@@ -18,3 +18,33 @@
     font-size: 60px;
     margin-top: 0;
 }
+
+@media (max-width: 768px) {
+    #social .container {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        margin-top: 4rem;
+        border-radius: 0.5rem 2.5rem 0 0;
+    }
+
+    #social h1, #social p {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    #social .container {
+        padding: 5px;
+        margin-top: 2rem;
+        border-radius: 0.5rem;
+        transform: translateX(0);
+    }
+
+    #social h1 {
+        font-size: 30px;
+    }
+
+    #social p {
+        font-size: 14px;
+    }
+}

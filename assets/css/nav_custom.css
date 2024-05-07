@@ -1,33 +1,109 @@
+:root {
+    --black: #000000;
+    --white: #FFFFFF;
+    --neon-pink: #FF007F; 
+    --hover-pink: #ff89da;
+    --transition-speed: 0.3s;
+    --background-start: #ececec;
+    --background-end: #fafafa;
+}
+
 .nav-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(to right, var(--background-start), var(--background-end));
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
     position: fixed;
-    top: 0;
     right: 0;
+    top: 0;
     width: 100%;
     z-index: 1000;
+    transition: background-color var(--transition-speed);
 }
+
 #main-nav {
-    display: block;
-    text-align: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 #main-nav ul {
+    display: flex;
     list-style: none;
     padding: 0;
+    margin: 0;
+    transition: transform var(--transition-speed);
 }
+
 #main-nav ul li {
-    padding: 10px 0;
+    margin: 0 1rem;
+    text-align: center;
 }
+
 #main-nav ul li a {
     color: var(--neon-pink);
+    font-size: clamp(14px, 1.5vw, 16px);
     text-decoration: none;
-    font-size: 18px;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    transition: color var(--transition-speed), background-color var(--transition-speed), transform var(--transition-speed);     
+}
+
+#main-nav ul li a:hover, #main-nav ul li a:focus {
+    background-color: var(--hover-pink);
+    color: var(--white);
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        justify-content: space-between;
+    }
+
+    #main-nav ul {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    #main-nav ul li {
+        margin: 0.5rem 0;
+    }
 }
 
 @media (max-width: 480px) {
-    h1 {
-        font-size: 30px;
+    .nav-container {
+        top: auto;
+        bottom: 0;
+        background: linear-gradient(to top, var(--background-start), var(--background-end));
+        padding: 0.5rem;
+    }
+
+    #main-nav ul {
+        display: block;
+    }
+
+    #main-nav ul li {
+        margin: 0.5rem auto;
+        opacity: 0.8;
+        transform: translateY(10px);
+        animation: slideUpAndFade 0.5s ease forwards;
     }
 
     #main-nav ul li a {
-        font-size: 16px;
+        font-size: clamp(12px, 5vw, 14px);
+    }
+
+    @keyframes slideUpAndFade {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 }

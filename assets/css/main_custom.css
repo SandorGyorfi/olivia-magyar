@@ -82,13 +82,12 @@ p {
     font-weight: 400;
 }
 
-#whois h1, #whois p {
+#whois h1, #whois p, #social h1, #social p, #blog h1, #blog p {
     text-align: left;
     color: var(--neon-pink);
 }
 
 #social h1, #social p {
-    text-align: left;
     color: var(--vibrant-purple);
 }
 
@@ -117,5 +116,24 @@ p {
 
     .parallax {
         background-attachment: scroll;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 90%;
+        padding: 5px;
+    }
+
+    .h1-style, h1 {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .section-content {
+        padding: 25px 5px;
     }
 }
