@@ -1,23 +1,37 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const sections = document.querySelectorAll('#whois .container, #blog .container, #social .container');
+    const sections = document.querySelectorAll('.section-content');
 
-    const animateOnScroll = (entries) => {
-        entries.forEach(entry => {
-            const id = entry.target.id || entry.target.className;
-            console.log(`Animating: ${id} | Is Intersecting: ${entry.isIntersecting} | Ratio: ${entry.intersectionRatio}`);
-            if (entry.isIntersecting) {
-                entry.target.style.transform = 'translateX(0)';
+    const updateTransforms = () => {
+        const screenWidth = window.innerWidth;
+        sections.forEach(section => {
+            if (screenWidth <= 375) {
+                section.style.transform = 'translateX(0%)';
             } else {
-                entry.target.style.transform = entry.target.dataset.outDirection;
+                const startDirection = section.dataset.startDirection;
+                section.style.transform = startDirection;
             }
         });
     };
 
-    const observer = new IntersectionObserver(animateOnScroll, { threshold: 0.1 });
+    const handleScrollAnimation = entries => {
+        entries.forEach(entry => {
+            const target = entry.target;
+            if (entry.isIntersecting) {
+                target.style.transform = 'translateX(0)';
+            } else {
+                const outDirection = target.dataset.outDirection || 'translateX(-100%)';
+                target.style.transform = outDirection;
+            }
+        });
+    };
 
+    const observer = new IntersectionObserver(handleScrollAnimation, { threshold: 0.1 });
     sections.forEach(section => {
-        console.log('observe:', section); 
         observer.observe(section);
-        section.style.transform = section.dataset.startDirection;
+        section.dataset.startDirection = getComputedStyle(section).transform;
+        section.dataset.outDirection = getComputedStyle(section).transform;
     });
+
+    updateTransforms();
+    window.addEventListener('resize', updateTransforms);
 });

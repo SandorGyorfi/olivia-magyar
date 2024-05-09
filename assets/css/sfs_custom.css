@@ -34,10 +34,9 @@
 
 @media (max-width: 480px) {
     #social .container {
-        padding: 5px;
+        padding: 1rem;
         margin-top: 2rem;
-        border-radius: 0.5rem;
-        transform: translateX(0);
+        border-radius: 0.5rem 2.5rem 0 0;
     }
 
     #social h1 {
