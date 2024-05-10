@@ -82,19 +82,7 @@ p {
     font-weight: 400;
 }
 
-#whois h1, #whois p, #social h1, #social p, #blog h1, #blog p {
-    text-align: left;
-    color: var(--neon-pink);
-}
 
-#social h1, #social p {
-    color: var(--vibrant-purple);
-}
-
-#blog h1, #blog p {
-    text-align: right;
-    color: var(--vibrant-red);
-}
 
 @media (max-width: 768px) {
     .container {

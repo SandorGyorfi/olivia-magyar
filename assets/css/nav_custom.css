@@ -1,109 +1,86 @@
 :root {
-    --black: #000000;
-    --white: #FFFFFF;
-    --neon-pink: #FF007F; 
-    --hover-pink: #ff89da;
-    --transition-speed: 0.3s;
-    --background-start: #ececec;
-    --background-end: #fafafa;
+    --background-start: #381a4a;
+    --background-end: #483469;
+    --neon-pink: #e63946;
+    --hover-pink: #ff6b81;
+    --white: #f1faee;
 }
 
 .nav-container {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 0.5rem 1rem;
+    justify-content: center;
+    padding: 1rem 2rem;
     background: linear-gradient(to right, var(--background-start), var(--background-end));
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: fixed;
-    right: 0;
     top: 0;
     width: 100%;
     z-index: 1000;
-    transition: background-color var(--transition-speed);
-}
-
-#main-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    backdrop-filter: blur(10px);
+    transition: background-color 0.3s;
 }
 
 #main-nav ul {
     display: flex;
+    flex-direction: row;
     list-style: none;
     padding: 0;
     margin: 0;
-    transition: transform var(--transition-speed);
+    align-items: center;
 }
 
 #main-nav ul li {
-    margin: 0 1rem;
-    text-align: center;
+    margin: 0 15px;
 }
 
 #main-nav ul li a {
+    font-size: 16px;
     color: var(--neon-pink);
-    font-size: clamp(14px, 1.5vw, 16px);
     text-decoration: none;
     padding: 0.5rem 1rem;
-    border-radius: 1rem;
-    transition: color var(--transition-speed), background-color var(--transition-speed), transform var(--transition-speed);     
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 #main-nav ul li a:hover, #main-nav ul li a:focus {
     background-color: var(--hover-pink);
     color: var(--white);
-    transform: scale(1.1);
+    outline: none; 
+    transform: scale(1.05); 
 }
 
 @media (max-width: 768px) {
-    .nav-container {
-        justify-content: space-between;
-    }
-
     #main-nav ul {
         flex-direction: column;
-        align-items: flex-end;
+        width: 100%;
     }
 
     #main-nav ul li {
-        margin: 0.5rem 0;
+        margin: 10px 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    #main-nav ul li a {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
     }
 }
 
 @media (max-width: 480px) {
     .nav-container {
-        top: auto;
         bottom: 0;
+        top: auto;
         background: linear-gradient(to top, var(--background-start), var(--background-end));
-        padding: 0.5rem;
     }
 
     #main-nav ul {
-        display: block;
+        flex-direction: row;
+        justify-content: space-around;
     }
 
     #main-nav ul li {
-        margin: 0.5rem auto;
-        opacity: 0.8;
-        transform: translateY(10px);
-        animation: slideUpAndFade 0.5s ease forwards;
-    }
-
-    #main-nav ul li a {
-        font-size: clamp(12px, 5vw, 14px);
-    }
-
-    @keyframes slideUpAndFade {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        margin: 0;
     }
 }
