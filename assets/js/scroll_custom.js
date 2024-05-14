@@ -28,17 +28,18 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting) {
                 target.style.transform = 'translateX(0)';
             } else {
-                const outDirection = target.dataset.outDirection || 'translateX(-100%)';      
+                const outDirection = target.dataset.outDirection || 'translateX(-100%)';
                 target.style.transform = outDirection;
             }
         });
     };
 
-    const observer = new IntersectionObserver(handleScrollAnimation, { threshold: 0.1 });     
+    const observer = new IntersectionObserver(handleScrollAnimation, { threshold: 0.1 });
+
     sections.forEach(section => {
         observer.observe(section);
         section.dataset.startDirection = getComputedStyle(section).transform;
-        section.dataset.outDirection = getComputedStyle(section).transform;
+        section.dataset.outDirection = 'translateX(-100%)';
     });
 
     updateTransforms();

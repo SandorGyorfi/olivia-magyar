@@ -8,12 +8,20 @@ document.addEventListener("DOMContentLoaded", function () {
     const toggleButton = document.createElement("button");
     toggleButton.textContent = "Menu";
     toggleButton.setAttribute("aria-label", "Toggle navigation");
-    toggleButton.style.cssText =
-        "position: absolute; top: 10px; left: 10px; z-index: 1050; cursor: pointer; padding: 5px 10px; background-color: #fff; border: 1px solid #000;";
+    toggleButton.style.cssText = `
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 1050;
+        cursor: pointer;
+        padding: 5px 10px;
+        background-color: #fff;
+        border: 1px solid #000;
+    `;
     navContainer.insertBefore(toggleButton, navContainer.firstChild);
     console.log("Toggle button created and inserted into navigation container");
 
-    toggleButton.style.display = "none";
+    toggleButton.style.display = "none"; 
 
     let currentSectionName; 
 
@@ -29,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
     navLinks.forEach((link) => {
         link.addEventListener("click", function () {
             console.log(`Navigation link clicked: ${this.textContent}`);
-            currentSectionName = this.getAttribute("href").substring(1); 
+            currentSectionName = this.getAttribute("href").substring(1);
             updateLinkVisibility();
         });
     });
