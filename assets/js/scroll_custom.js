@@ -13,11 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const updateTransforms = () => {
         const screenWidth = window.innerWidth;
         sections.forEach(section => {
-            if (screenWidth <= 375) {
-                section.style.transform = 'translateX(0%)';
+            if (screenWidth <= 768) {
+                section.style.transform = 'translateX(0)';
+                section.style.opacity = '1';
             } else {
                 const startDirection = section.dataset.startDirection;
                 section.style.transform = startDirection;
+                section.style.opacity = '0';
             }
         });
     };
@@ -27,9 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const target = entry.target;
             if (entry.isIntersecting) {
                 target.style.transform = 'translateX(0)';
+                target.style.opacity = '1';
             } else {
                 const outDirection = target.dataset.outDirection || 'translateX(-100%)';
                 target.style.transform = outDirection;
+                target.style.opacity = '0';
             }
         });
     };
