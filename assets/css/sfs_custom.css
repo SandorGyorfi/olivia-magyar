@@ -1,16 +1,17 @@
 #social .container {
     padding-left: 1rem;
-    margin-top: 8rem;
     padding-right: 2rem;
+    margin-top: 8rem;
     border-radius: 1rem 5rem 0 0;
     background-color: var(--white);
-    box-shadow: var(--black) 0.5rem 0.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     transform: translateX(-100%);
-    transition: transform 0.5s ease-out;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+    opacity: 0;
 }
 
 #social h1, #social p {
-    text-align: left;
+    text-align: center;
     color: var(--vibrant-purple);
 }
 
@@ -19,31 +20,63 @@
     margin-top: 0;
 }
 
-@media (max-width: 768px) {
-    #social .container {
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-        margin-top: 4rem;
-        border-radius: 0.5rem 2.5rem 0 0;
-    }
+#social .social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
 
-    #social h1, #social p {
-        font-size: 40px;
-    }
+#social .social-icon {
+    font-size: 40px;
+    color: var(--vibrant-purple);
+    margin:
+10px;
+transition: color 0.3s, transform 0.3s;
+}
+
+#social .social-icon:hover {
+color: var(--neon-pink);
+transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+#social .container {
+padding-left: 0.5rem;
+padding-right: 0.5rem;
+margin-top: 4rem;
+border-radius: 0.5rem 2.5rem 0 0;
+}
+
+less
+Copy code
+#social h1, #social p {
+    font-size: 40px;
+}
+
+#social .social-icon {
+    font-size: 30px;
+}
 }
 
 @media (max-width: 480px) {
-    #social .container {
-        padding: 1rem;
-        margin-top: 2rem;
-        border-radius: 0.5rem 2.5rem 0 0;
-    }
+#social .container {
+padding: 1rem;
+margin-top: 2rem;
+border-radius: 0.5rem 2.5rem 0 0;
+}
 
-    #social h1 {
-        font-size: 30px;
-    }
+css
+Copy code
+#social h1 {
+    font-size: 30px;
+}
 
-    #social p {
-        font-size: 14px;
-    }
+#social p {
+    font-size: 14px;
+}
+
+#social .social-icon {
+    font-size: 25px;
+}
 }
