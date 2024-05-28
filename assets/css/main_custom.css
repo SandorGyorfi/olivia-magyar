@@ -7,17 +7,17 @@
 
 /* Root Variables */
 :root {
-    --neon-pink: #FF007F;
-    --vibrant-purple: #B452FF;
-    --neon-green: #32CD32;
-    --neon-blue: #00BFFF;
+    --vibrant-pink: #FF007F;
+    --vibrant-green: #00FF00;
+    --vibrant-blue: #00BFFF;
+    --vibrant-purple: #8000FF;
     --vibrant-yellow: #FFD700;
-    --vibrant-red: #FF6347;
     --white: #FFFFFF;
     --black: #000000;
-    --background-start: #381a4a;
-    --background-end: #483469;
-    --hover-pink: #ff6b81;
+    --background-pink: #FF007F;
+    --background-purple: #8000FF;
+    --hover-pink: #FF69B4;
+    --bg-main: linear-gradient(to right, #8000FF, #FF007F);
 }
 
 /* Body and Fonts */
@@ -27,15 +27,8 @@ body, h1, h2, h3, p {
 
 html, body {
     scroll-behavior: smooth;
-    background: linear-gradient(135deg, #f06, #a8e, #4fc, #0af, #84f, #ff9);
-    background-size: 300% 300%;
-    animation: gradientBackground 15s ease infinite;
-}
-
-@keyframes gradientBackground {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    background: var(--bg-main);
+    background-size: cover;
 }
 
 /* Navbar */
@@ -44,14 +37,12 @@ html, body {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background: linear-gradient(to right, var(--background-start), var(--background-end));
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: var(--background-pink);
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    backdrop-filter: blur(10px);
-    transition: background-color 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 nav {
@@ -73,12 +64,9 @@ nav {
 
 .olivia-magyar {
     font-size: 2.5rem;
-    font-family: 'Permanent Marker', cursive;
-    background-image: linear-gradient(#FF0FF8 0%, #F9F9F7 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 2px 2px 20px #f008b7;
+    font-family: 'Lobster', cursive;
+    color: var(--white);
+    text-shadow: 2px 2px var(--black);
 }
 
 #menu {
@@ -90,11 +78,12 @@ nav {
     display: none;
     width: 55px;
     height: 55px;
-    background: var(--background-start);
+    background: var(--background-pink);
     border-radius: 50%;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 #menu-icon {
@@ -108,7 +97,6 @@ nav {
     width: 25px;
     height: 2px;
     background: var(--white);
-    transition: all 0.3s;
 }
 
 ul {
@@ -122,12 +110,13 @@ li {
 }
 
 a {
-    color: var(--neon-pink);
+    color: var(--white);
     text-decoration: none;
     font-size: 1rem;
     padding: 0.5rem 1rem;
     border-radius: 8px;
     transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 a:hover, a:focus {
@@ -135,6 +124,29 @@ a:hover, a:focus {
     color: var(--white);
     outline: none;
     transform: scale(1.05);
+}
+
+/* Mobile Navbar */
+@media (max-width: 768px) {
+    #menu-toggle {
+        display: flex;
+    }
+    ul {
+        display: none;
+        flex-direction: column;
+        background: var(--background-pink);
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        width: 200px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+    ul.showMenu {
+        display: flex;
+    }
+    li {
+        margin-left: 0;
+    }
 }
 
 /* Container */
@@ -146,8 +158,7 @@ a:hover, a:focus {
     position: relative;
     z-index: 2;
     background-color: rgba(255, 255, 255, 0.8);
-    border: 2px solid var(--neon-pink);
-    box-shadow: 10px 10px 0px var(--neon-green), 15px 15px 0px var(--neon-blue), 20px 20px 0px var(--vibrant-purple);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* Heading Styles */
@@ -155,20 +166,22 @@ a:hover, a:focus {
     font-size: 2.5rem;
     font-weight: 900;
     margin-top: 0;
-    color: var(--neon-pink);
-    font-family: 'Permanent Marker', cursive;
-    text-shadow: 2px 2px var(--vibrant-yellow);
+    color: var(--vibrant-pink);
+    font-family: 'Lobster', cursive;
+    text-shadow: 2px 2px var(--black);
 }
 
 h2, h3 {
     font-weight: 700;
-    color: var(--vibrant-red);
+    color: var(--vibrant-blue);
+    text-shadow: 2px 2px var(--black);
 }
 
 p {
     font-size: 1.2rem;
     font-weight: 400;
     color: var(--black);
+    text-shadow: 1px 1px var(--white);
 }
 
 /* Content Section */
@@ -177,31 +190,27 @@ p {
     padding: 1rem 0;
 }
 
-.image-container {
-    position: relative;
+.whois-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.whois-container img {
     max-width: 100%;
-    overflow: hidden;
-    border: 5px solid var(--neon-pink);
-    box-shadow: 10px 10px 0 var(--vibrant-purple), 15px 15px 0 var(--neon-green);
-}
-
-.image-container img {
-    width: 100%;
-    display: block;
-}
-
-.text-container {
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.9);
-    color: var(--black);
-    border-radius: 10px;
-    box-shadow: 5px 5px 0px var(--neon-pink), 10px 10px 0px var(--neon-green), 15px 15px 0px var(--neon-blue);
+    border: none;
+    margin-bottom: 1rem;
 }
 
 .text-container h1 {
     font-size: 2.5rem;
     color: var(--black);
-    font-family: 'Permanent Marker', cursive;
+    font-family: 'Lobster', cursive;
+    text-shadow: 2px 2px var(--white);
 }
 
 .text-container p {
@@ -209,6 +218,7 @@ p {
     line-height: 1.5;
     margin-bottom: 1rem;
     font-family: 'Montserrat', sans-serif;
+    text-shadow: 1px 1px var(--white);
 }
 
 /* Social Section */
@@ -220,7 +230,7 @@ p {
 }
 
 .social-icon:hover {
-    color: var(--neon-pink);
+    color: var(--vibrant-pink);
 }
 
 /* Tumblr Post */
@@ -258,9 +268,9 @@ p {
     background-color: #fff;
     border-radius: 15px;
     padding: 1rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
     color: #333;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .nav {
@@ -273,6 +283,7 @@ p {
     color: #333;
     cursor: pointer;
     z-index: 10;
+    text-shadow: 2px 2px var(--black);
 }
 
 .nav.left {
@@ -284,25 +295,6 @@ p {
 }
 
 @media (max-width: 768px) {
-    #menu-toggle {
-        display: flex;
-    }
-    ul {
-        display: none;
-        flex-direction: column;
-        background: var(--neon-blue);
-        position: absolute;
-        top: 70px;
-        right: 20px;
-        width: 200px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
-    ul.showMenu {
-        display: flex;
-    }
-    li {
-        margin-left: 0;
-    }
     .h1-style, h1 {
         font-size: 2rem;
     }
