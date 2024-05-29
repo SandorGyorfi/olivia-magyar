@@ -32,7 +32,7 @@ html, body {
 }
 
 /* Navbar */
-.nav-container {
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -45,24 +45,7 @@ html, body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 1rem 2rem;
-}
-
 #brand {
-    display: flex;
-    align-items: center;
-}
-
-#word-mark {
-    margin-left: 20px;
-}
-
-.olivia-magyar {
     font-size: 2.5rem;
     font-family: 'Lobster', cursive;
     color: var(--white);
@@ -149,19 +132,15 @@ a:hover, a:focus {
     }
 }
 
-/* Container */
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    position: relative;
-    z-index: 2;
+/* Content Section */
+.content-section {
+    margin-top: 5rem;
+    padding: 1rem 0;
     background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
 }
 
-/* Heading Styles */
 .h1-style, h1 {
     font-size: 2.5rem;
     font-weight: 900;
@@ -184,43 +163,6 @@ p {
     text-shadow: 1px 1px var(--white);
 }
 
-/* Content Section */
-.content-section {
-    margin-top: 5rem;
-    padding: 1rem 0;
-}
-
-.whois-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-}
-
-.whois-container img {
-    max-width: 100%;
-    border: none;
-    margin-bottom: 1rem;
-}
-
-.text-container h1 {
-    font-size: 2.5rem;
-    color: var(--black);
-    font-family: 'Lobster', cursive;
-    text-shadow: 2px 2px var(--white);
-}
-
-.text-container p {
-    font-size: 1.2rem;
-    line-height: 1.5;
-    margin-bottom: 1rem;
-    font-family: 'Montserrat', sans-serif;
-    text-shadow: 1px 1px var(--white);
-}
-
 /* Social Section */
 .social-icon {
     font-size: 2rem;
@@ -231,11 +173,6 @@ p {
 
 .social-icon:hover {
     color: var(--vibrant-pink);
-}
-
-/* Tumblr Post */
-.tumblr-post {
-    margin: 2rem 0;
 }
 
 /* Carousel Styles */
@@ -254,23 +191,20 @@ p {
     transition: transform 0.5s ease;
 }
 
-.card-container {
+.card {
     flex: 0 0 100%;
     opacity: 0.5;
     transition: opacity 0.5s;
-}
-
-.card-container.active {
-    opacity: 1;
-}
-
-.card {
     background-color: #fff;
     border-radius: 15px;
     padding: 1rem;
     text-align: center;
     color: #333;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.card.active {
+    opacity: 1;
 }
 
 .nav {
