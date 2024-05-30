@@ -9,15 +9,15 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     const carousel = document.querySelector('.carousel-inner');
-    const cards = document.querySelectorAll('.card-container');
+    const cards = document.querySelectorAll('.carousel-inner .card');
     const prevButton = document.querySelector('.nav.left');
     const nextButton = document.querySelector('.nav.right');
 
     let currentIndex = 0;
 
     function updateCarousel() {
-        const cardWidth = cards[currentIndex].offsetWidth;
-        carousel.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+        const cardWidth = cards[0].offsetWidth;
+        carousel.style.transform = `translateX(-${currentIndex * cardWidth}px)`;        
         cards.forEach((card, index) => {
             if (index === currentIndex) {
                 card.classList.add('active');
