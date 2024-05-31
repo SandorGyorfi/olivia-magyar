@@ -20,51 +20,51 @@
     --section-padding: 60px 20px;
 }
 
-/* Body and Fonts */
+/* Typography */
 body, h1, h2, h3, p {
-    font-family: 'Baloo 2', cursive;
+    font-family: 'Baloo 2', cursive; 
 }
 
 html, body {
-    scroll-behavior: smooth;
-    background: var(--background-color);
-    color: var(--text-color);
+    scroll-behavior: smooth; 
+    background: var(--background-color); 
+    color: var(--text-color); 
 }
 
-/* image */
-.img-fluid{
-    float: left;
+/* Image Styling */
+.img-fluid {
+    float: left; 
     margin: 1rem;
 }
 
-/* Navbar */
+/* Navbar Styling */
 .navbar {
-    background: var(--navbar-bg) !important;
+    background-color: var(--navbar-bg) !important; 
 }
 
 .navbar-brand {
-    font-size: 2.5rem;
-    font-family: 'Pacifico', cursive;
-    color: var(--secondary-color) !important;
-    text-shadow: 2px 2px var(--black);
+    font-size: 2.5rem; 
+    font-family: 'Pacifico', cursive; 
+    color: var(--secondary-color) !important; 
+    text-shadow: 2px 2px var(--black); 
 }
 
 .nav-link {
-    color: var(--secondary-color) !important;
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    transition: background-color 0.3s, color 0.3s, transform 0.3s;
-    text-shadow: 1px 1px var(--black);
+    color: var(--secondary-color) !important; 
+    font-size: 1rem; 
+    padding: 0.5rem 1rem; 
+    transition: background-color 0.3s, color 0.3s, transform 0.3s; 
+    text-shadow: 1px 1px var(--black); 
 }
 
 .nav-link:hover, .nav-link:focus {
-    background-color: var(--hover-bg) !important;
-    color: var(--white) !important;
-    outline: none;
-    transform: scale(1.05);
+    background-color: var(--hover-bg) !important; 
+    color: var(--white) !important; 
+    outline: none; 
+    transform: scale(1.05); 
 }
 
-/* Sections */
+/* Content Sections */
 .content-section {
     padding: var(--section-padding);
     background-color: var(--carousel-bg);
@@ -96,7 +96,7 @@ p {
     color: var(--text-color);
 }
 
-/* Social Section */
+/* Social Icons */
 .social-icon {
     font-size: 2.5rem;
     color: var(--text-color);
@@ -161,6 +161,7 @@ p {
     right: 10px;
 }
 
+/* Responsive Adjustments */
 @media (max-width: 768px) {
     .h1-style, h1 {
         font-size: 2.5rem;
