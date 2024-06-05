@@ -60,25 +60,39 @@
         </section>
 
         <section id="blog" class="content-section">
-            <div class="container">
-                <h1 class="h1-style">Blog Highlights</h1>
-                <div class="carousel">
-                    <div class="carousel-inner">
-                        <div class="card active">
-                            <h2>Card 1</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                        </div>
+            <div class="container text-center">
+                <h1>Blog Highlights</h1>
+                <div class="row">
+                    <div class="col-md-4">
                         <div class="card">
-                            <h2>Card 2</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                        </div>
-                        <div class="card">
-                            <h2>Card 3</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                            <img src="https://via.placeholder.com/300x200" alt="Blog Post 1" class="img-fluid">
+                            <div class="card-body">
+                                <h2>Blog Post 1</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.</p>
+                                <a href="#" class="btn btn-primary">Read More</a>
+                            </div>
                         </div>
                     </div>
-                    <button class="nav left"><i class='bx bx-chevron-left'></i></button>
-                    <button class="nav right"><i class='bx bx-chevron-right'></i></button>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/300x200" alt="Blog Post 2" class="img-fluid">
+                            <div class="card-body">
+                                <h2>Blog Post 2</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.</p>
+                                <a href="#" class="btn btn-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/300x200" alt="Blog Post 3" class="img-fluid">
+                            <div class="card-body">
+                                <h2>Blog Post 3</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.</p>
+                                <a href="#" class="btn btn-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -96,6 +110,28 @@
                 <a href="https://www.instagram.com/olivia.magyar" target="_blank" class="social-icon">
                     <i class='bx bxl-instagram'></i>
                 </a>
+            </div>
+        </section>
+
+        <section id="contact" class="content-section text-center">
+            <div class="container">
+                <h1 class="h1-style">Contact</h1>
+                <p>Get in touch with Olivia Magyar for collaborations and inquiries.</p>
+                <form>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
             </div>
         </section>
     </main>
