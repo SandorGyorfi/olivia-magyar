@@ -33,8 +33,15 @@ html, body {
 
 /* Image Styling */
 .img-fluid {
-    float: left; 
-    margin: 1rem;
+    max-width: 100%;
+    height: auto;
+    margin: 1rem 0;
+}
+
+.float-left {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
 }
 
 /* Navbar Styling */
@@ -68,7 +75,6 @@ html, body {
 .content-section {
     padding: var(--section-padding);
     background-color: var(--carousel-bg);
-    text-align: center;
 }
 
 .content-section:nth-child(even) {
@@ -124,182 +130,33 @@ p {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
-.card-body {/* General Reset */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    
-    /* Root Variables */
-    :root {
-        --primary-color: #ce1fff;
-        --secondary-color: #FFD700;
-        --background-color: #FFD1DC;
-        --text-color: #7f00a2;
-        --accent-color: #00ff15;
-        --white: #ffffff;
-        --black: #272727;
-        --navbar-bg: #ce1fff;
-        --hover-bg: #d75ff9;
-        --carousel-bg: #ffffff;
-        --section-padding: 60px 20px;
-    }
-    
-    /* Typography */
-    body, h1, h2, h3, p {
-        font-family: 'Baloo 2', cursive;
-    }
-    
-    html, body {
-        scroll-behavior: smooth;
-        background: var(--background-color);
-        color: var(--text-color);
-    }
-    
-    /* Image Styling */
-    .img-fluid {
-        max-width: 100%;
-        height: auto;
-        margin: 1rem 0;
-    }
-    
-    .float-left {
-        float: left;
-        margin-right: 20px;
-        margin-bottom: 20px;
-    }
-    
-    /* Navbar Styling */
-    .navbar {
-        background-color: var(--navbar-bg) !important;
-    }
-    
-    .navbar-brand {
-        font-size: 2.5rem;
-        font-family: 'Pacifico', cursive;
-        color: var(--secondary-color) !important;
-        text-shadow: 2px 2px var(--black);
-    }
-    
-    .nav-link {
-        color: var(--secondary-color) !important;
-        font-size: 1rem;
-        padding: 0.5rem 1rem;
-        transition: background-color 0.3s, color 0.3s, transform 0.3s;
-        text-shadow: 1px 1px var(--black);
-    }
-    
-    .nav-link:hover, .nav-link:focus {
-        background-color: var(--hover-bg) !important;
-        color: var(--white) !important;
-        outline: none;
-        transform: scale(1.05);
-    }
-    
-    /* Content Sections */
-    .content-section {
-        padding: var(--section-padding);
-        background-color: var(--carousel-bg);
-    }
-    
-    .content-section:nth-child(even) {
-        background-color: var(--background-color);
-    }
-    
-    .h1-style, h1 {
-        font-size: 3rem;
-        font-weight: 900;
-        margin-top: 0;
-        color: var(--primary-color);
-        font-family: 'Concert One', cursive;
-        text-shadow: 3px 3px var(--black);
-    }
-    
-    h2, h3 {
-        font-weight: 700;
-        color: var(--accent-color);
-        text-shadow: 2px 2px var(--black);
-    }
-    
-    p {
-        font-size: 1.2rem;
-        font-weight: 400;
-        color: var(--text-color);
-    }
-    
-    /* Social Icons */
-    .social-icon {
-        font-size: 2.5rem;
-        color: var(--text-color);
-        margin: 0 1rem;
-        transition: color 0.3s ease-in-out;
-    }
-    
-    .social-icon:hover {
-        color: var(--primary-color);
-    }
-    
-    /* Card Styles */
-    .card {
-        background-color: var(--carousel-bg);
-        border-radius: 15px;
-        padding: 1rem;
-        margin: 1rem 0;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        text-align: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    
-    .card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-    }
-    
-    .card-body {
-        padding: 1rem;
-    }
-    
-    .card img {
-        border-radius: 10px;
-    }
-    
-    /* Responsive Adjustments */
-    @media (max-width: 768px) {
-        .h1-style, h1 {
-            font-size: 2.5rem;
-        }
-        p {
-            font-size: 1rem;
-        }
-        .navbar-brand {
-            font-size: 2rem;
-        }
-    
-        .float-left {
-            float: none;
-            margin-right: 0;
-            margin-bottom: 20px;
-        }
-    }
-    
-    @media (max-width: 480px) {
-        .h1-style, h1 {
-            font-size: 2rem;
-        }
-        p {
-            font-size: 0.875rem;
-        }
-        .navbar-brand {
-            font-size: 1.5rem;
-        }
-    }
-    
+.card-body {
     padding: 1rem;
 }
 
 .card img {
     border-radius: 10px;
+}
+
+/* Button Styles */
+.btn {
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: darken(var(--primary-color), 10%);
+    border-color: darken(var(--primary-color), 10%);
 }
 
 /* Responsive Adjustments */
@@ -312,6 +169,12 @@ p {
     }
     .navbar-brand {
         font-size: 2rem;
+    }
+
+    .float-left {
+        float: none;
+        margin-right: 0;
+        margin-bottom: 20px;
     }
 }
 
