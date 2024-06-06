@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to update carousel position
     const updateCarousel = () => {
-        if (cards.length === 0) return; 
+        if (cards.length === 0) return;
         const cardWidth = cards[0].offsetWidth;
         carousel.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
         cards.forEach((card, index) => {
