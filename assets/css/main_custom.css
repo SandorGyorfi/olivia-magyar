@@ -159,6 +159,29 @@ p {
     border-color: darken(var(--primary-color), 10%);
 }
 
+/* Footer Styling */
+.footer-section {
+    background-color: var(--navbar-bg);
+    padding: var(--section-padding);
+    color: var(--secondary-color);
+}
+
+.footer-section .h1-style, .footer-section h1 {
+    color: var(--secondary-color);
+}
+
+.footer-section p {
+    color: var(--secondary-color);
+}
+
+.footer-section .social-icon {
+    color: var(--secondary-color);
+}
+
+.footer-section .social-icon:hover {
+    color: var(--white);
+}
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .h1-style, h1 {
