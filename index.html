@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,8 +16,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet">
     <script async src="https://assets.tumblr.com/post.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("YOUR_USER_ID");
+        })();
+    </script>
 </head>
-
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark">
@@ -33,7 +37,7 @@
                             <a class="nav-link" href="#whois">Olivia</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#blog">Blog</a>
+                            <a class="nav-link" href="#social-blog">Social & Blog</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#contact">Contact</a>
@@ -59,77 +63,34 @@
             </div>
         </section>
 
-        <section id="blog" class="content-section">
+        <section id="social-blog" class="content-section">
             <div class="container text-center">
-                <h1>Blog Highlights</h1>
+                <h1>Connect on Social</h1>
+                <p>Follow Olivia on Instagram</p>
+                <a href="https://www.instagram.com/magyarolivia/" target="_blank" class="social-icon">
+                    <i class='bx bxl-instagram'></i>
+                </a>
+                <h1>Recent Posts</h1>
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="https://via.placeholder.com/300x200" alt="Blog Post 1" class="img-fluid">
-                            <div class="card-body">
-                                <h2>Blog Post 1</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.</p>
-                                <a href="#" class="btn btn-primary">Read More</a>
-                            </div>
-                        </div>
+                    <div class="col-md-4" id="instagram-post-1">
+                        <!-- Instagram post 1 -->
                     </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="https://via.placeholder.com/300x200" alt="Blog Post 2" class="img-fluid">
-                            <div class="card-body">
-                                <h2>Blog Post 2</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.</p>
-                                <a href="#" class="btn btn-primary">Read More</a>
-                            </div>
-                        </div>
+                    <div class="col-md-4" id="instagram-post-2">
+                        <!-- Instagram post 2 -->
                     </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="https://via.placeholder.com/300x200" alt="Blog Post 3" class="img-fluid">
-                            <div class="card-body">
-                                <h2>Blog Post 3</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.</p>
-                                <a href="#" class="btn btn-primary">Read More</a>
-                            </div>
-                        </div>
+                    <div class="col-md-4" id="instagram-post-3">
+                        <!-- Instagram post 3 -->
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section id="social-posts" class="content-section">
-            <div class="container text-center">
-                <h1>Recent Social Posts</h1>
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="https://via.placeholder.com/300x200" alt="Social Post 1" class="img-fluid">
-                            <div class="card-body">
-                                <h2>Post Title 1</h2>
-                                <p>Description for the first social media post. This can be a brief summary or an excerpt from the post.</p>
-                                <a href="#" class="btn btn-primary">View Post</a>
-                            </div>
-                        </div>
+                    <div class="col-md-4" id="tumblr-post-1">
+                        <!-- Tumblr post 1 -->
                     </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="https://via.placeholder.com/300x200" alt="Social Post 2" class="img-fluid">
-                            <div class="card-body">
-                                <h2>Post Title 2</h2>
-                                <p>Description for the second social media post. This can be a brief summary or an excerpt from the post.</p>
-                                <a href="#" class="btn btn-primary">View Post</a>
-                            </div>
-                        </div>
+                    <div class="col-md-4" id="tumblr-post-2">
+                        <!-- Tumblr post 2 -->
                     </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="https://via.placeholder.com/300x200" alt="Social Post 3" class="img-fluid">
-                            <div class="card-body">
-                                <h2>Post Title 3</h2>
-                                <p>Description for the third social media post. This can be a brief summary or an excerpt from the post.</p>
-                                <a href="#" class="btn btn-primary">View Post</a>
-                            </div>
-                        </div>
+                    <div class="col-md-4" id="tumblr-post-3">
+                        <!-- Tumblr post 3 -->
                     </div>
                 </div>
             </div>
@@ -139,7 +100,7 @@
             <div class="container">
                 <h1 class="h1-style">Contact</h1>
                 <p>Get in touch with Olivia Magyar for collaborations and inquiries.</p>
-                <form>
+                <form id="contact-form">
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
                         <input type="text" class="form-control" id="name" required>
@@ -160,23 +121,17 @@
 
     <footer class="footer-section text-center">
         <div class="container">
-            <h1 class="h1-style">Connect on Social</h1>
-            <p>Follow Olivia on social media platforms.</p>
-            <a href="https://www.facebook.com/olivia.magyar" target="_blank" class="social-icon">
-                <i class='bx bxl-facebook'></i>
-            </a>
-            <a href="https://x.com/olivia_magyar" target="_blank" class="social-icon">
-                <i class='bx bxl-twitter'></i>
-            </a>
-            <a href="https://www.instagram.com/olivia.magyar" target="_blank" class="social-icon">
-                <i class='bx bxl-instagram'></i>
-            </a>
+            <p>&copy; 2024 Olivia Magyar. All rights reserved.</p>
+            <p>Website by Sandor Gyorfi</p>
         </div>
     </footer>
 
     <!-- Bootstrap JS and dependencies -->
     <script src="assets/js/bs/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main_custom.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/social_tumblr.js"></script>
+    <script src="assets/js/social_instagram.js"></script>
+    <script src="assets/js/contact_form.js"></script>
 </body>
-
 </html>
